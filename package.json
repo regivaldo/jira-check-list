@@ -1,0 +1,44 @@
+{
+  "name": "jira-check-list",
+  "version": "1.0.0",
+  "description": "Jira checklist",
+  "main": "index.html",
+  "scripts": {
+    "start": "node_modules/http-server/bin/http-server -c-0",
+    "copy": "cp -r index.html manifest.json dist/ && cp -r assets dist/assets && cp -r extension dist/extension",
+    "zip": "cd dist && zip jira-check-list * assets/* assets/imgs/* extension/img/* extension/img/icons/* extension/views/*",
+    "delete": "rm -r dist/assets && rm -r dist/extension && rm -r dist/index.html dist/manifest.json",
+    "build:pipe": "mkdir dist && npm run copy",
+    "build": "mkdir dist && npm run copy && npm run zip && npm run delete"
+  },
+  "bugs": {
+    "url": "https://github.com/regivaldo/jira-check-list/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/regivaldo/jira-check-list"
+  },
+  "keywords": [
+    "Jira",
+    "Checklist"
+  ],
+  "contributors": [
+    {
+      "name": "Regivaldo Fernandes",
+      "email": "regivaldorfs@gmail.com",
+      "url": "https://regivaldo.com.br"
+    },
+    {
+      "name": "Leonardo Coelho",
+      "email": "frm-leonardo@outlook.com",
+      "url": "https://github.com/leonardoclh"
+    }
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.0"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}

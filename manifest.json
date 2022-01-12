@@ -1,0 +1,30 @@
+{
+  "name": "Jira Check List",
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "description": "A checklit by Jira task.",
+  "icons": {
+    "16": "extension/img/icons/icon16.png",
+    "48": "extension/img/icons/icon48.png",
+    "128": "extension/img/icons/icon128.png"
+  },
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+
+  "options_ui": {
+    "page": "extension/views/options.html",
+    "chrome_style": true 
+  },
+  
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+  "web_accessible_resources": [
+    "index.html"
+  ],
+
+	"content_scripts": [{
+    "js": ["extension/libs/", "extension/js/"],
+    "matches": ["https://jiracloud.cit.com.br/*"]
+  }]
+}
